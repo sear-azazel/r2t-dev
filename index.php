@@ -15,6 +15,8 @@
 				<h1 id = "message"><?php echo "Hello World!"; ?></h1>
 				<p class='description'></p> Thanks for creating a <span class="blue">PHP Starter Application</span>.
 			</td>
+		</tr>
+		<tr>
 			<td>
 				<p>いま
 				<?php
@@ -23,6 +25,7 @@
 				?>
 				です。</p>
 			</td>
+			<td><a href="apps/app-a/">Application A page.</a></td>
 		</tr>
 	</table>
 </body>
