@@ -23,7 +23,39 @@
 					date_default_timezone_set('Asia/Tokyo');
 					echo date("Y年m月d日H時i分s秒");
 				?>
-				です。</p>
+				です。(ページを表示したときのサーバーの時間っす)
+				</p>
+				
+				<p id="Clock1" style="display: inline"></p>
+				
+				
+				<script type="text/javascript">
+				setInterval('showClock1()',1000);
+				function showClock1() {
+				var DWs = new Array('Sun.','Mon.','Tue.','Wed.','Thu.','Fri.','Sat.');
+				var Now = new Date();
+				var YY = Now.getYear();
+				if (YY < 2000) { YY += 1900; }
+				var MM = set0( Now.getMonth() + 1 );
+				var DD = set0( Now.getDate() );
+				var DW = DWs[ Now.getDay() ];
+				var hh = set0( Now.getHours() );
+				var mm = set0( Now.getMinutes() );
+				var ss = set0( Now.getSeconds() );
+				var RTime1 = ' ' + YY + '.' + MM + '.' + DD + ' ' + DW + ' ' + hh + ':' + mm + ':' + ss + ' ';
+				document.getElementById("Clock1").innerHTML = RTime1;
+				}
+				
+				function set0(num) {
+				var ret;
+				if( num < 10 ) { ret = "0" + num; }
+				else { ret = num; }
+				return ret;
+				}
+				</script>
+				
+				
+				
 			</td>
 			<td><a href="apps/app-a/">Application A page.</a></td>
 		</tr>
@@ -38,6 +70,7 @@
 					echo '--- 名前の部分だけ変数を使って表示 ---';
 					echo '<br>';
 					
+					#初期化
 					$name = "";
 					$name = "岩満";
 								
